@@ -1,13 +1,26 @@
+import {createClient} from './API.js';
+import {validateIfEmpty, showAlert} from './funciones.js';
+
 (function(){
     
     const form = document.querySelector('#formulario');
 
-    const name = document.querySelector('#nombre');
-    const email = document.querySelector('email');
-    const celNumber = document.querySelector('telefono');
-    const company = document.querySelector('empresa');
+        form.addEventListener('submit', function(e){
 
-    if(name !== '' && email !== '' && celNumber !== '' && company !== ''){
-        createClient();
-    }
+            e.preventDefault();
+
+            const name = document.querySelector('#nombre').value;
+            const email = document.querySelector('#email').value;
+            const cellPhone = document.querySelector('#telefono').value;
+            const company = document.querySelector('#empresa').value;
+
+            const client = { name, email, cellPhone, company };
+            
+            if(validateIfEmpty(client)){
+                showAlert('All fields must be completed');
+                return;
+            }
+
+            createClient(client);
+        });
 })();

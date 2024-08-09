@@ -1,11 +1,18 @@
 {
-  "clientes": [
+  "clients": [
     {
-      "nombre": "william",
+      "name": "william",
       "email": "williamwun@gmail.com",
-      "telefono": "7788583949",
-      "empresa": "Google",
+      "cellPhone": "7788583949",
+      "company": "Google",
       "id": "0b4c"
+    },
+    {
+      "id": "8720",
+      "name": "jasmin",
+      "email": "jasminormeno@gmail.com",
+      "cellPhone": "7788583949",
+      "company": "Pwc"
     }
   ]
 }
